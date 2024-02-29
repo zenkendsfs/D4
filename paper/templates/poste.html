@@ -1,0 +1,26 @@
+{% extends 'flatpages/default.html' %}
+{% load my_filters %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% block title %}
+<{{ post.title }}
+{% endblock title %}
+
+{% block content %}
+<h1>{{ post.title|censor }}</h1>
+<h3>{{ post.dateCreation|date:'d.m.Y' }}</h3>
+{{ post.text|censor }}
+<hr>
+{{ post.postType }}
+{% endblock content %}
+</body>
+</html>
